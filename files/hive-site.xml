@@ -28,4 +28,8 @@
      <name>hive.metastore.schema.verification</name>
      <value>false</value>
    </property>
+   <property>
+     <name>dfs.support.append</name>
+     <value>true</value>
+   </property>
 </configuration>
