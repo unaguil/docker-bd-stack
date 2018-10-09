@@ -25,7 +25,8 @@ RUN wget http://apache.rediris.es/flume/1.8.0/apache-flume-1.8.0-bin.tar.gz && \
     tar xvzf apache-flume-1.8.0-bin.tar.gz && \
     rm apache-flume-1.8.0-bin.tar.gz
 
-ADD files/ /
+COPY files/launch.sh /
+COPY files/init.sh /
 
 COPY files/hive-site.xml /apache-hive-2.3.3-bin/conf
 COPY files/hive-site.xml /spark-2.0.2-bin-hadoop2.7/conf
