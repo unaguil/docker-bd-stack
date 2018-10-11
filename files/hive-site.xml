@@ -32,8 +32,4 @@
      <name>dfs.support.append</name>
      <value>true</value>
    </property>
-   <property>
-    <name>hive.execution.engine</name>
-    <value>spark</value>
-  </property>
 </configuration>
