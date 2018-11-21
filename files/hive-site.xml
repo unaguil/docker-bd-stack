@@ -2,7 +2,7 @@
    <property>
       <name>javax.jdo.option.ConnectionURL</name>
       <value>jdbc:postgresql://metastore/metastore?useSSL=true</value>
-      <description>metadata is stored in a MySQL server</description>
+      <description>metadata is stored in a PostgreSQL server</description>
    </property>
    <property>
       <name>javax.jdo.option.ConnectionDriverName</name>
@@ -12,12 +12,12 @@
    <property>
       <name>javax.jdo.option.ConnectionUserName</name>
       <value>hiveuser</value>
-      <description>user name for connecting to mysql server</description>
+      <description>user name for connecting to PostgreSQL server</description>
    </property>
    <property>
       <name>javax.jdo.option.ConnectionPassword</name>
       <value>hivepassword</value>
-      <description>password for connecting to mysql server</description>
+      <description>password for connecting to PostgreSQL server</description>
    </property>
    <property>
      <name>hive.metastore.warehouse.dir</name>
@@ -25,11 +25,27 @@
      <description>location of default database for the warehouse</description>
    </property>
    <property>
-     <name>hive.metastore.schema.verification</name>
-     <value>false</value>
+     <name>hive.metastore.uris</name>
+     <value>thrift://localhost:9083</value>
    </property>
    <property>
-     <name>dfs.support.append</name>
+     <name>hive.txn.manager</name>
+     <value>org.apache.hadoop.hive.ql.lockmgr.DbTxnManager</value>
+   </property>
+   <property>
+     <name>hive.support.concurrency</name>
      <value>true</value>
+   </property>
+   <property>
+     <name>hive.exec.dynamic.partition.mode</name>
+     <value>nonstrict</value>
+   </property>
+   <property>
+     <name>hive.compactor.initiator.on</name>
+     <value>true</value>
+   </property>
+   <property>
+     <name>hive.compactor.worker.threads</name>
+     <value>1</value>
    </property>
 </configuration>

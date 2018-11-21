@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description></description>
+    <groupId>3c2d1878-0167-1000-b0cf-94ead5764b3a</groupId>
+    <name>HTTPtoHive</name>
+    <snippet>
+        <processGroups>
+            <id>92bf0ba0-6b20-3df9-0000-000000000000</id>
+            <parentGroupId>adbe4d44-fd0c-33c8-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.0</y>
+            </position>
+            <comments></comments>
+            <contents>
+                <connections>
+                    <id>41e26e3a-0d90-3288-0000-000000000000</id>
+                    <parentGroupId>92bf0ba0-6b20-3df9-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>92bf0ba0-6b20-3df9-0000-000000000000</groupId>
+                        <id>e898e149-2ff6-3bdf-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>92bf0ba0-6b20-3df9-0000-000000000000</groupId>
+                        <id>80f42be3-b4de-3a10-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>603b2dea-b3d7-3a58-0000-000000000000</id>
+                    <parentGroupId>92bf0ba0-6b20-3df9-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>92bf0ba0-6b20-3df9-0000-000000000000</groupId>
+                        <id>80f42be3-b4de-3a10-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>92bf0ba0-6b20-3df9-0000-000000000000</groupId>
+                        <id>f5fb6411-0127-368c-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <processors>
+                    <id>80f42be3-b4de-3a10-0000-000000000000</id>
+                    <parentGroupId>92bf0ba0-6b20-3df9-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>595.0</x>
+                        <y>337.0</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-kite-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.1</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Hadoop configuration files</key>
+<value>
+    <name>Hadoop configuration files</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Record schema</key>
+<value>
+    <name>Record schema</name>
+</value>
+                            </entry>
+                            <entry>
+<key>kite-compression-type</key>
+<value>
+    <name>kite-compression-type</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Hadoop configuration files</key>
+                            </entry>
+                            <entry>
+<key>Record schema</key>
+<value>{
+  "type": "record",
+  "name": "test",
+  "fields": [
+    {
+        "name": "id",
+        "type": "int"
+    },
+    {
+        "name": "name",
+        "type": "string"
+    }
+  ]
+}
+</value>
+                            </entry>
+                            <entry>
+<key>kite-compression-type</key>
+<value>SNAPPY</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>ConvertJSONToAvro</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>incompatible</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>RUNNING</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.kite.ConvertJSONToAvro</type>
+                </processors>
+                <processors>
+                    <id>e898e149-2ff6-3bdf-0000-000000000000</id>
+                    <parentGroupId>92bf0ba0-6b20-3df9-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>598.0</x>
+                        <y>581.0</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-hive-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.1</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>hive-stream-metastore-uri</key>
+<value>
+    <name>hive-stream-metastore-uri</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-config-resources</key>
+<value>
+    <name>hive-config-resources</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-database-name</key>
+<value>
+    <name>hive-stream-database-name</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-table-name</key>
+<value>
+    <name>hive-stream-table-name</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-partition-cols</key>
+<value>
+    <name>hive-stream-partition-cols</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-autocreate-partition</key>
+<value>
+    <name>hive-stream-autocreate-partition</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-max-open-connections</key>
+<value>
+    <name>hive-stream-max-open-connections</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-heartbeat-interval</key>
+<value>
+    <name>hive-stream-heartbeat-interval</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-transactions-per-batch</key>
+<value>
+    <name>hive-stream-transactions-per-batch</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-records-per-transaction</key>
+<value>
+    <name>hive-stream-records-per-transaction</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-call-timeout</key>
+<value>
+    <name>hive-stream-call-timeout</name>
+</value>
+                            </entry>
+                            <entry>
+<key>rollback-on-failure</key>
+<value>
+    <name>rollback-on-failure</name>
+</value>
+                            </entry>
+                            <entry>
+<key>kerberos-credentials-service</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
+    <name>kerberos-credentials-service</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Kerberos Principal</key>
+<value>
+    <name>Kerberos Principal</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Kerberos Keytab</key>
+<value>
+    <name>Kerberos Keytab</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>hive-stream-metastore-uri</key>
+<value>thrift://localhost:9083</value>
+                            </entry>
+                            <entry>
+<key>hive-config-resources</key>
+                            </entry>
+                            <entry>
+<key>hive-stream-database-name</key>
+<value>default</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-table-name</key>
+<value>test</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-partition-cols</key>
+                            </entry>
+                            <entry>
+<key>hive-stream-autocreate-partition</key>
+<value>true</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-max-open-connections</key>
+<value>8</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-heartbeat-interval</key>
+<value>60</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-transactions-per-batch</key>
+<value>100</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-records-per-transaction</key>
+<value>10000</value>
+                            </entry>
+                            <entry>
+<key>hive-stream-call-timeout</key>
+<value>0</value>
+                            </entry>
+                            <entry>
+<key>rollback-on-failure</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>kerberos-credentials-service</key>
+                            </entry>
+                            <entry>
+<key>Kerberos Principal</key>
+                            </entry>
+                            <entry>
+<key>Kerberos Keytab</key>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>PutHiveStreaming</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>retry</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>RUNNING</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.hive.PutHiveStreaming</type>
+                </processors>
+                <processors>
+                    <id>f5fb6411-0127-368c-0000-000000000000</id>
+                    <parentGroupId>92bf0ba0-6b20-3df9-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>592.0</x>
+                        <y>73.0</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.1</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Base Path</key>
+<value>
+    <name>Base Path</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Listening Port</key>
+<value>
+    <name>Listening Port</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Max Data to Receive per Second</key>
+<value>
+    <name>Max Data to Receive per Second</name>
+</value>
+                            </entry>
+                            <entry>
+<key>SSL Context Service</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.ssl.RestrictedSSLContextService</identifiesControllerService>
+    <name>SSL Context Service</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Authorized DN Pattern</key>
+<value>
+    <name>Authorized DN Pattern</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Max Unconfirmed Flowfile Time</key>
+<value>
+    <name>Max Unconfirmed Flowfile Time</name>
+</value>
+                            </entry>
+                            <entry>
+<key>HTTP Headers to receive as Attributes (Regex)</key>
+<value>
+    <name>HTTP Headers to receive as Attributes (Regex)</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Return Code</key>
+<value>
+    <name>Return Code</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Base Path</key>
+<value>contentListener</value>
+                            </entry>
+                            <entry>
+<key>Listening Port</key>
+<value>9080</value>
+                            </entry>
+                            <entry>
+<key>Max Data to Receive per Second</key>
+                            </entry>
+                            <entry>
+<key>SSL Context Service</key>
+                            </entry>
+                            <entry>
+<key>Authorized DN Pattern</key>
+<value>.*</value>
+                            </entry>
+                            <entry>
+<key>Max Unconfirmed Flowfile Time</key>
+<value>60 secs</value>
+                            </entry>
+                            <entry>
+<key>HTTP Headers to receive as Attributes (Regex)</key>
+                            </entry>
+                            <entry>
+<key>Return Code</key>
+<value>200</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>ListenHTTP</name>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>RUNNING</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.ListenHTTP</type>
+                </processors>
+            </contents>
+            <name>HTTPtoHive</name>
+            <variables/>
+        </processGroups>
+    </snippet>
+    <timestamp>11/22/2018 16:59:04 GMT</timestamp>
+</template>

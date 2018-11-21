@@ -1,0 +1,19 @@
+version: '3'
+services:
+
+  stack:
+    build: .
+    image: docker-bd-stack
+    ports:
+      - "8080:8080"   # Zeppelin UI port
+      - "8090:8090"   # Nifi UI port
+      - "9080:9080"   # Nifi workflow HTTP input port
+    volumes:
+      - ${DATA_DIR}/hive:/root/hive
+    links:
+      - metastore
+
+  metastore:
+    image: unaguil/docker-bd-metastore
+    volumes:
+      - ${DATA_DIR}/metastore:/var/lib/postgresql/data
