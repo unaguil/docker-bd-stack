@@ -58,7 +58,7 @@ Add some data using Beeline console
 Using Zeppelin
 --------------
 
-Open the following URL in your browser <http://localhost:8080>.
+Open the following URL in your browser `<http://localhost:8080>`_.
 Connect to the Hive context from Spark
 
 .. code-block:: scala
@@ -76,7 +76,7 @@ Connect to the Hive context from Spark
 Accessing Nifi
 --------------
 
-The running instance of Nifi can be accesed at <http://localhost:8090/nifi>.
+The running instance of Nifi can be accesed at `<http://localhost:8090/nifi>`_.
 Load the example workflow located at files/HTTPtoHive.xml into Nifi and execute
 the workflow. It will create an HTTP server listening at port 9080 and waiting
 for incoming JSON data.
